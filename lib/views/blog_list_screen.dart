@@ -20,7 +20,7 @@ class BlogListScreen extends StatefulWidget {
 }
 
 class BlogListScreenState extends State<BlogListScreen> {
-  BlogListBloc  blogListBloc = BlogListBloc();
+  BlogListBloc blogListBloc = BlogListBloc();
 
   @override
   void initState() {
@@ -45,7 +45,6 @@ class BlogListScreenState extends State<BlogListScreen> {
                 asyncsnapshot.data.error.length > 0) {
               return Center(child: Text("No Blog Entry at the moment"));
             }
-
             return blogListBuildComposer(asyncsnapshot.data);
           } else if (asyncsnapshot.hasError) {
             return Center(
